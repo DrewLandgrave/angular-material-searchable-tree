@@ -1,0 +1,22 @@
+.example-tree-invisible {
+  display: none;
+}
+
+.example-tree ul,
+.example-tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+  padding-right: 5px;
+}
+
+button.topic-selection-button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 14px;
+}
+
+.mat-input-element{
+  color: white;
+}
