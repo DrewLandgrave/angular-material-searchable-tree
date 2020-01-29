@@ -17,9 +17,20 @@ export class TopicTreeComponent implements OnInit {
   @Output()
   valueChange = new EventEmitter<Topic>();
 
-  treeControl = new FlatTreeControl<Topic>(node => node.level, node => node.expandable);
-  treeFlattener = new MatTreeFlattener(this.transformer, this.getNodeLevel, this.isExpandable, this.getChildren)
-  dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
+  treeControl = new FlatTreeControl<Topic>(
+    this.getNodeLevel,
+    this.isExpandable
+  );
+  treeFlattener = new MatTreeFlattener(
+    this.transformer,
+    this.getNodeLevel,
+    this.isExpandable,
+    this.getChildren
+  );
+  dataSource = new MatTreeFlatDataSource(
+    this.treeControl,
+    this.treeFlattener
+  );
 
   constructor(private topicApiService: TopicApiService, private changeDetectorRef: ChangeDetectorRef) { }
 
